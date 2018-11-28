@@ -31,6 +31,7 @@ gem 'rack-cors'
 ##additional gems added
 gem 'active_model_serializers'
 gem 'jwt'
+gem 'faker'
 gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
