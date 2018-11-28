@@ -3,6 +3,7 @@ class CreateItineraryDays < ActiveRecord::Migration[5.2]
     create_table :itinerary_days do |t|
       t.integer :trip_id
       t.integer :day
+      t.string :location
       t.text :description
 
       t.timestamps

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_162940) do
   create_table "itinerary_days", force: :cascade do |t|
     t.integer "trip_id"
     t.integer "day"
+    t.string "location"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -26,7 +27,6 @@ ActiveRecord::Schema.define(version: 2018_11_21_162940) do
   create_table "photos", force: :cascade do |t|
     t.integer "trip_id"
     t.string "image_url"
-    t.text "caption"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2018_11_21_162940) do
 
   create_table "trips", force: :cascade do |t|
     t.integer "creator_id"
-    t.text "location"
+    t.string "country_name"
     t.text "summary"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

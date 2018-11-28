@@ -1,5 +1,5 @@
 class TripSerializer < ActiveModel::Serializer
-  attributes :id, :creator_id, :location, :summary
+  attributes :id, :creator_id, :country_name, :summary
 
   belongs_to :creator
   has_many :photos

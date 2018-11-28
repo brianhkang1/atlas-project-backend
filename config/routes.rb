@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :show, :create, :update]
       resources :trips, only: [:index, :show, :create, :update, :destroy]
       resources :trip_likes, only: [:index, :show, :create]
-      resources :photos, only: [:create]
-      resources :itinerary_days, only: [:create]
+      # resources :photos, only: [:create]
+      # resources :itinerary_days, only: [:create]
 
       post '/login', to: 'auth#create'
       get '/profile', to: "users#profile"

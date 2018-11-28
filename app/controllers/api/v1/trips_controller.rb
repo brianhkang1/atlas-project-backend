@@ -11,9 +11,11 @@ class Api::V1::TripsController < ApplicationController
   end
 
   def create
-    new_trip = Trip.create(creator_id: params[:creator_id], location: params[:location], summary: params[:summary])
+    new_trip = Trip.create(creator_id: params[:creator_id], country_name: params[:country_name], summary: params[:summary])
 
-    params[:itinerary].split(",").each_with_index{|desc, index| ItineraryDay.create(trip_id: new_trip.id, day: index+1, description: desc)}
+    locationsArray = params[:locations].split("&&&,")
+    byebug
+    params[:itinerary].split("&&&,").each_with_index{|desc, index| ItineraryDay.create(trip_id: new_trip.id, day: index+1, description: desc, location: locationsArray[index])}
 
     (1..(params[:photoCount].to_i)).each{|num| Photo.create(trip_id: new_trip.id, image_url: params["photo-#{num}"])}
     render json: new_trip
