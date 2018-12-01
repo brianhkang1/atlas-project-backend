@@ -37,7 +37,7 @@ end
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :pinned_locations)
+    params.require(:user).permit(:username, :password)
   end
 
   def find_user
