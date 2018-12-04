@@ -1,5 +1,9 @@
 class Api::V1::PinnedLocationsController < ApplicationController
 
+  def index
+    render json: PinnedLocation.all
+  end
+
   def create
     @pinned_location = PinnedLocation.create(pinned_location_params)
     if @pinned_location.persisted?
@@ -11,13 +15,13 @@ class Api::V1::PinnedLocationsController < ApplicationController
 
   def destroy
     @pinned_location = PinnedLocation.find(params[:id])
-    @pinned_location.destroy 
+    @pinned_location.destroy
   end
 
   private
 
   def pinned_location_params
-    params.require(:pinned_location).permit(:longitude, :latitude, :country)
+    params.require(:pinned_location).permit(:longitude, :latitude, :country, :user_id)
   end
 
 end

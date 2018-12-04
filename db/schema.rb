@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(version: 2018_12_01_203647) do
   create_table "pinned_locations", force: :cascade do |t|
     t.integer "user_id"
     t.string "country"
-    t.decimal "longitude", precision: 8, scale: 4
-    t.decimal "latitude", precision: 8, scale: 4
+    t.decimal "longitude"
+    t.decimal "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
