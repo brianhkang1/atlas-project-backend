@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:index, :show, :create, :update]
       resources :trips, only: [:index, :show, :create, :update, :destroy]
-      resources :trip_likes, only: [:index, :create, :destroy]
+      resources :trip_likes, only: [:index, :show, :create, :destroy]
       resources :pinned_locations, only: [:index, :create, :destroy]
 
       post '/login', to: 'auth#create'

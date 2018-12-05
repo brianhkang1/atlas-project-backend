@@ -6,6 +6,10 @@ def index
   render json: TripLike.all
 end
 
+def show
+  render json: TripLike.find(params[:id])
+end
+
 def create
   @trip_like = TripLike.create(trip_like_params)
   if @trip_like.persisted?
